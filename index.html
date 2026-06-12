@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="東京・神奈川の屋根工事専門店。創業40年近くの実績と信頼。瓦工事・板金工事・屋根リフォームから太陽光パネル設置まで対応。建設業許可取得済み。完全予約制で丁寧に対応します。">
+  <title>株式会社タツミ屋根企画｜東京・神奈川の屋根工事専門店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS変数 — ライトブラウン系パレット
+    ============================================ */
+    :root {
+      --primary:      #3a2410;   /* 深みのある温かい茶 */
+      --primary-mid:  #6b4a2e;   /* ミッドブラウン */
+      --accent:       #c8843c;   /* アンバー（銅色） */
+      --accent-light: #e0a050;   /* ライトアンバー */
+      --bg:           #ffffff;   /* 白 */
+      --bg-warm:      #faf6f0;   /* 温かいオフホワイト */
+      --bg-alt:       #f2ebe0;   /* 薄ベージュ */
+      --bg-dark:      #362210;   /* ダークブラウン（フッターのみ） */
+      --text:         #2a1a0a;
+      --text-mid:     #6b4a2e;
+      --text-light:   #9a8068;
+      --white:        #ffffff;
+      --shadow-sm:    0 2px 12px rgba(58,36,16,0.08);
+      --shadow-md:    0 8px 32px rgba(58,36,16,0.12);
+      --gradient-accent: linear-gradient(135deg, #c8843c, #e0a050);
+    }
+
+    /* ============================================
+       リセット・ベース
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    br.sp-br { display: none; } /* スマホのみ改行 */
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================
+       レイアウト
+    ============================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 80px; }
+    section { padding: 96px 0; position: relative; }
+
+    /* セクションラベル */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .section-center { text-align: center; }
+    .section-center .section-label { justify-content: center; }
+
+    h2.section-title {
+      font-size: clamp(30px, 3.8vw, 50px);
+      font-weight: 900;
+      line-height: 1.22;
+      color: var(--primary);
+      margin-bottom: 14px;
+      text-wrap: balance;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    /* ============================================
+       ヘッダー
+    ============================================ */
+    .site-header {
+      background: var(--white);
+      border-bottom: 3px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(58,36,16,0.08);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 32px;
+      height: 74px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+    .header-logo {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .header-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+    .header-name-sub {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    .header-contact { text-align: right; }
+    /* ヘッダー お問い合わせボタン */
+    .header-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 7px 15px;   /* 90%縮小 */
+      border-radius: 4px;
+      font-size: 12px;     /* 90%縮小 */
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-left: 16px;
+      white-space: nowrap;
+    }
+    .header-cta-btn:hover { background: var(--primary); transform: translateY(-1px); }
+    /* ナビバー 所属団体リンクボタン */
+    .pnav-btn--org {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px 5px 10px;
+      border: 1px solid rgba(58,36,16,0.14);
+      border-radius: 4px;
+      background: var(--white);
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      transition: border-color 0.2s ease;
+    }
+    /* スマホ専用 所属団体バー */
+    .mobile-orgs-bar { display: none; }
+    .mobile-orgs-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-mid);
+      white-space: nowrap;
+      padding-right: 8px;
+      border-right: 1px solid rgba(58,36,16,0.15);
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+    .mobile-org-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 6px 3px 3px;
+      background: var(--white);
+      border: 1px solid rgba(58,36,16,0.15);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: border-color 0.2s;
+    }
+    .mobile-org-btn:hover { border-color: var(--accent); }
+    .mobile-org-logo { height: 16px; width: auto; border-radius: 2px; }
+
+    .pnav-orgs-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .pnav-orgs-heading {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-mid);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding-right: 4px;
+      border-right: 1px solid rgba(58,36,16,0.15);
+      margin-right: 2px;
+    }
+    .pnav-btn--org:hover { border-color: var(--accent); }
+    .pnav-btn--org:hover .pnav-org-fullname { color: var(--accent); }
+    .pnav-org-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      writing-mode: horizontal-tb;
+    }
+    .pnav-org-sep {
+      width: 1px;
+      height: 26px;
+      background: rgba(58,36,16,0.12);
+      flex-shrink: 0;
+    }
+    .pnav-org-logo { height: 22px; width: auto; display: block; flex-shrink: 0; }
+    .pnav-org-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .pnav-org-corp {
+      font-size: 9px;
+      font-weight: 400;
+      color: rgba(58,36,16,0.5);
+      white-space: nowrap;
+    }
+    .pnav-org-fullname {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .header-area {
+      font-size: 22px; /* 変更前: 11px */
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .header-tel {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
+    .header-tel-note {
+      font-size: 22px; /* 変更前: 11px */
+      font-weight: 400;
+      color: var(--text-light);
+    }
+
+    /* ============================================
+       ヒーロー — 明るいクリーム背景
+    ============================================ */
+    .hero {
+      background: var(--bg-warm);
+      min-height: clamp(520px, calc(100vh - 120px), 680px); /* ヘッダー74px + ナビ44px + 境界2px */
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 0; /* section { padding: 96px 0 } を上書き — ヒーローは余白不要 */
+    }
+    /* 左上にアクセントライン */
+    .hero-top-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      pointer-events: none;
+    }
+    /* 背景ドット装飾（右上エリア） */
+    .hero-dot-deco {
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(200,132,60,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    /* グロー */
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,132,60,0.12) 0%, transparent 70%);
+      width: 500px; height: 500px;
+      bottom: -100px; right: 100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      align-items: stretch;
+      width: 100%;
+      flex: 1;       /* 親 flex で縦伸縮 */
+      height: 100%;  /* グリッドセルを確実に親高さに合わせる */
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: clamp(32px, 4vh, 64px) 48px clamp(20px, 3vh, 40px) clamp(24px, 3vw, 52px); /* 左余白を半減・上余白も圧縮 */
+    }
+
+    /* テキスト側 */
+    .hero-label-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px; /* 変更前: 11px */
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      animation: heroFadeIn 0.6s ease-out 0.1s both;
+    }
+    .hero-label-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero-title {
+      font-size: clamp(36px, 3.8vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      animation: heroFadeIn 0.6s ease-out 0.3s both;
+    }
+    .hero-title .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: 19px; /* 変更前: 16px */
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-top: 1.2em;  /* タイトルとの間に1行分の空白 */
+      margin-bottom: 20px;
+      animation: heroFadeIn 0.6s ease-out 0.5s both;
+    }
+    .hero-cta-wrap {
+      animation: heroFadeIn 0.6s ease-out 0.7s both;
+      margin-top: 28px;
+    }
+    /* 電話CTAボタン */
+    .hero-phone-btn {
+      display: inline-flex;
+      flex-direction: column;
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hero-phone-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(58,36,16,0.28);
+    }
+    .hero-phone-note {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      opacity: 0.75;
+      margin-bottom: 5px;
+    }
+    .hero-phone-num {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .hero-phone-hours {
+      font-size: 11px;
+      opacity: 0.65;
+      margin-top: 5px;
+    }
+    /* 実績タグ列 */
+    .hero-orgs {
+      display: none; /* デスクトップは非表示（ナビバーに表示済み） */
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-orgs-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      margin-right: 2px;
+    }
+    .hero-org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px 3px 4px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-org-badge:hover {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.45);
+    }
+    .hero-org-logo {
+      height: 18px;
+      width: auto;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .hero-trust {
+      display: flex;
+      gap: 0;
+    }
+    .hero-trust-item {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 18px;
+      border-right: 1px solid rgba(58,36,16,0.1);
+    }
+    .hero-trust-item:first-child { padding-left: 0; }
+    .hero-trust-item:last-child { border-right: none; }
+    .hero-trust-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .hero-trust-num .unit { font-size: 0.5em; }
+    .hero-trust-label {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ビジュアル側 — 上から下まで完全フィル */
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+      /* align-items:stretch で高さはグリッドに合わせる */
+    }
+    .hero-photo {
+      /* 絶対配置で上端〜下端を完全に埋める */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    /* 写真の上に浮かぶバッジ */
+    .hero-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: var(--gradient-accent);
+      color: var(--white);
+      padding: 16px 22px;
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(200,132,60,0.4);
+    }
+    .hero-badge-num {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .hero-badge-text {
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+    /* 写真右上バッジ */
+    .hero-badge-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--white);
+      border: 2px solid var(--bg-alt);
+      color: var(--primary);
+      padding: 10px 16px;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .hero-badge-top span {
+      display: block;
+      font-size: 10px;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       サービス
+    ============================================ */
+    .services-section { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(58,36,16,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .service-photo {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .service-body { padding: 24px 26px 28px; }
+    .service-card-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .service-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* 特殊工法 */
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .specialty-card {
+      background: var(--bg-warm);
+      border-radius: 12px;
+      padding: 28px 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .specialty-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+    .specialty-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .specialty-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .specialty-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       ページ内ナビ（ヘッダー直下）
+    ============================================ */
+    .page-nav {
+      background: var(--bg-warm);
+      border-bottom: 1px solid rgba(58,36,16,0.10);
+    }
+    .page-nav-inner {
+      width: 100%;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .page-nav-inner::-webkit-scrollbar { display: none; }
+    .pnav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-mid);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .pnav-btn:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .pnav-btn--contact {
+      margin-left: auto;
+      background: var(--primary);
+      color: var(--white) !important;
+      border-radius: 4px;
+      border-bottom: 3px solid transparent !important;
+      padding: 8px 20px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .pnav-btn--contact:hover {
+      background: var(--accent);
+    }
+
+    /* ============================================
+       すべらん革命 バナー
+    ============================================ */
+    .suberan-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 32px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+      border-radius: 16px;
+      padding: 36px 48px;
+      text-decoration: none;
+      color: var(--white);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .suberan-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(200,132,60,0.15);
+      pointer-events: none;
+    }
+    .suberan-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 30%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(200,132,60,0.08);
+      pointer-events: none;
+    }
+    .suberan-banner:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(58,36,16,0.28);
+    }
+    .suberan-left { flex: 1; position: relative; z-index: 1; }
+    .suberan-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--accent-light);
+      background: rgba(200,132,60,0.2);
+      border: 1px solid rgba(200,132,60,0.4);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .suberan-title {
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .suberan-brand {
+      display: block;
+      font-size: clamp(22px, 2.8vw, 34px);
+      color: var(--accent-light);
+    }
+    .suberan-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 20px;
+    }
+    .suberan-desc strong { color: var(--accent-light); font-weight: 700; }
+    .suberan-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .suberan-feat {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .suberan-right {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .suberan-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-accent);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(200,132,60,0.5);
+    }
+    .suberan-url {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+    }
+    .suberan-logo-wrap {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .suberan-logo {
+      max-width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    /* ============================================
+       実績・信頼（写真背景）
+    ============================================ */
+    .trust-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-photo-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .trust-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(32, 18, 6, 0.82);
+    }
+    .trust-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    /* 左：テキスト */
+    .trust-section .section-title { color: var(--white); }
+    .trust-section .section-sub { color: rgba(255,255,255,0.65); margin-bottom: 36px; }
+    .trust-section .section-label { color: var(--accent); }
+
+    .trust-features { display: flex; flex-direction: column; gap: 18px; }
+    .trust-feature {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .trust-feature-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(200,132,60,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .trust-feature-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+    .trust-feature-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+    }
+
+    /* 右：数字カード */
+    .trust-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .trust-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(200,132,60,0.25);
+      border-radius: 14px;
+      padding: 26px 22px;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .trust-stat:hover {
+      border-color: rgba(200,132,60,0.5);
+      background: rgba(255,255,255,0.12);
+    }
+    .trust-stat-num {
+      font-size: clamp(34px, 3.2vw, 48px);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 9px;
+      font-variant-numeric: tabular-nums;
+    }
+    .trust-stat-num .unit { font-size: 0.48em; }
+    .trust-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       営業エリア
+    ============================================ */
+    .area-section { background: var(--bg-alt); }
+    .area-dot {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(58,36,16,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .area-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .area-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .area-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--bg-alt);
+    }
+    .area-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gradient-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+    }
+    .area-pref {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .area-cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .area-city {
+      background: var(--bg-warm);
+      border: 1px solid rgba(58,36,16,0.08);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-mid);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .area-city:hover {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    /* ============================================
+       新着情報
+    ============================================ */
+    .news-section { background: var(--bg); }
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px dashed rgba(58,36,16,0.1);
+    }
+    .news-item:first-child { border-top: 1px dashed rgba(58,36,16,0.1); }
+    .news-date {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 700;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      min-width: 88px;
+    }
+    .news-badge {
+      background: var(--accent);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .news-badge.green { background: #5a8c60; }
+    .news-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       最終CTA（写真背景）
+    ============================================ */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-photo-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(32,18,6,0.88) 0%, rgba(80,48,16,0.82) 100%);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section .section-label { justify-content: center; }
+    .cta-title {
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 14px;
+      text-wrap: balance;
+    }
+    .cta-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 44px;
+    }
+    .cta-phone-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--gradient-accent);
+      padding: 28px 64px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 56px rgba(200,132,60,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-phone-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 56px rgba(200,132,60,0.65);
+    }
+    .cta-phone-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 7px;
+    }
+    .cta-phone-num {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .cta-phone-hours {
+      font-size: 12px;
+      color: rgba(255,255,255,0.72);
+      margin-top: 9px;
+    }
+    .cta-info {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-info-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.58);
+    }
+    .cta-info-icon { color: var(--accent-light); }
+
+    /* ============================================
+       フッター
+    ============================================ */
+    .site-footer {
+      background: var(--bg-dark);
+      padding: 60px 0 28px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 44px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 14px;
+    }
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-accent);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+    }
+    .footer-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-tagline {
+      font-size: 12px;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.9;
+    }
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+    }
+    .footer-list { display: flex; flex-direction: column; gap: 9px; }
+    .footer-list-item {
+      display: flex;
+      gap: 9px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+    .footer-list-icon { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+    .footer-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin-bottom: 20px;
+    }
+    .footer-copy {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+    .footer-org-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .footer-org-link:hover {
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
+    }
+    .footer-org-logo-wrap {
+      background: #fff;
+      border-radius: 4px;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .footer-org-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    .footer-org-name {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
+
+    /* ============================================
+       レスポンシブ
+    ============================================ */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      section { padding: 60px 0; }
+
+      /* ヘッダー: 1行コンパクトに */
+      .header-inner { padding: 0 16px; height: 56px; flex-wrap: nowrap; gap: 0; }
+      .header-area { display: none; } /* エリア文字は非表示 */
+      .header-tel { font-size: 18px; }
+      .header-tel-note { display: none; } /* 受付時間テキストも非表示 */
+      .header-logo { width: 40px; height: 40px; }
+      .header-name { font-size: 15px; }
+
+      /* ヒーロー高さをモバイルヘッダー56px＋ナビ40pxに合わせて再計算 */
+      .hero { min-height: calc(100vh - 56px - 40px); height: auto; }
+
+      /* ===== モバイルヒーロー: 写真を背景にひく ===== */
+      .hero {
+        background-image: url('./images/hero-roof-black.jpg');
+        background-size: cover;
+        background-position: top center;
+        background-color: #1a2a10;
+      }
+      /* 読みやすくするための半透明オーバーレイ */
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(8, 16, 4, 0.60) 0%,
+          rgba(8, 16, 4, 0.50) 55%,
+          rgba(8, 16, 4, 0.68) 100%
+        );
+        z-index: 1;
+      }
+      /* デコ要素は不要なので非表示 */
+      .hero-top-line,
+      .hero-dot-deco,
+      .hero-glow { display: none; }
+      /* テキストを白系に切り替え */
+      .hero-title { color: #ffffff !important; }
+      .hero-label-tag { color: var(--accent-light) !important; }
+      .hero-sub { color: rgba(255,255,255,0.82) !important; }
+      .hero-trust-item { border-right-color: rgba(255,255,255,0.15) !important; }
+      .hero-trust-label { color: rgba(255,255,255,0.60) !important; }
+      /* ===== モバイルヒーロー ここまで ===== */
+
+      /* モバイルヒーロー: コンテンツを下寄せにして空間を活かす */
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 0 24px 40px;   /* 上は0、下寄せで余白 */
+        gap: 0;
+        position: relative;
+        z-index: 2;
+        display: flex;           /* グリッドをフレックスに切り替え */
+        flex-direction: column;
+        justify-content: flex-end; /* コンテンツを下に寄せる */
+      }
+      .hero-text { padding: 0; }
+      /* タイトルを大きく */
+      .hero-title { font-size: clamp(36px, 9.5vw, 52px) !important; margin-bottom: 16px; }
+      .hero-title .accent { white-space: nowrap; }
+      br.sp-br { display: inline; } /* スマホで改行を有効化 */
+      /* ラベル */
+      .hero-label-tag { white-space: nowrap; font-size: 11px; letter-spacing: 0.2em; margin-bottom: 14px; }
+      /* サブコピー */
+      .hero-sub br { display: none; }
+      .hero-sub { font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+      /* 電話ボタンを大きく・フル幅 */
+      .hero-phone-btn { width: 100%; box-sizing: border-box; padding: 18px 24px; margin-bottom: 20px; }
+      .hero-phone-num { font-size: 28px; white-space: nowrap; }
+      .hero-phone-note { font-size: 12px; }
+      /* 実績バッジ */
+      .hero-visual { display: none; }
+      .hero-trust { flex-wrap: nowrap; gap: 0; }
+      .hero-trust-item { padding: 8px 10px; }
+      .hero-trust-num { font-size: 22px; }
+      .hero-trust-label { font-size: 10px; white-space: nowrap; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .specialty-grid { grid-template-columns: 1fr; }
+
+      .page-nav-inner { padding: 0 16px; justify-content: space-around; }
+      .pnav-btn { font-size: 12px; padding: 10px 12px; }
+      .pnav-btn--org { display: none; } /* スマホはナビに所属団体ボタン非表示 */
+      .pnav-orgs-group { display: none; } /* スマホはグループごと非表示 */
+      .mobile-orgs-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 16px;
+        background: var(--bg-warm);
+        border-bottom: 1px solid rgba(58,36,16,0.08);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .mobile-orgs-bar::-webkit-scrollbar { display: none; }
+      .header-cta-btn { display: none; } /* スマホはヘッダーCTAボタン非表示 */
+
+      .suberan-banner { flex-direction: column; padding: 28px 24px; gap: 24px; }
+      .suberan-right { width: 100%; }
+      .suberan-cta-btn { width: 100%; justify-content: center; }
+
+      .trust-inner { grid-template-columns: 1fr; gap: 44px; }
+      .trust-stats { grid-template-columns: 1fr 1fr; }
+
+      .area-grid { grid-template-columns: 1fr; }
+
+      .cta-phone-box { padding: 22px 28px; width: 100%; }
+      .cta-phone-num { font-size: clamp(28px, 8vw, 42px); }
+      .cta-info { flex-direction: column; align-items: center; gap: 12px; }
+
+      .news-item { flex-wrap: wrap; gap: 8px; }
+      .news-date { min-width: auto; }
+
+      .footer-inner { padding: 0 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+      h2.section-title { font-size: clamp(24px, 7vw, 34px) !important; }
+      .section-sub { font-size: 15.2px; }
+      img { max-width: 100%; }
+
+      /* 所属団体バー スマホ */
+      .member-bar-inner { padding: 0 16px; gap: 8px; }
+      .member-bar-label { display: none; }
+      .member-org { padding: 6px 12px; font-size: 12px; gap: 8px; }
+      .member-org-logo { height: 26px; }
+      .member-org-sub { display: none; }
+
+      /* 所属団体バナー スマホ */
+      .org-banners-section { padding: 44px 0; }
+      .org-banners-grid { grid-template-columns: 1fr !important; } /* メインCSSより後に書かれているため !important で上書き */
+      .org-banner-link { flex-direction: row; padding: 20px; gap: 16px; }
+      .org-banner-logo { height: 48px; max-width: 90px; }
+      .org-banner-name { font-size: 14px; }
+    }
+
+    /* ============================================
+       所属団体バー（ページ上部）
+    ============================================ */
+    .member-bar {
+      background: var(--white);
+      border-bottom: 2px solid rgba(58,36,16,0.08);
+      padding: 10px 0;
+    }
+    .member-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .member-bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+      white-space: nowrap;
+      padding-right: 12px;
+      border-right: 1px solid rgba(58,36,16,0.12);
+    }
+    .member-org {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 18px 7px 12px;
+      background: var(--bg-warm);
+      border: 1px solid rgba(58,36,16,0.10);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .member-org:hover {
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 3px 14px rgba(200,132,60,0.18);
+    }
+    .member-org-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .member-org-text { line-height: 1.3; }
+    .member-org-sub {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       所属団体リンクバナー（問い合わせ下）
+    ============================================ */
+    .org-banners-section {
+      background: var(--bg-alt);
+      padding: 64px 0;
+    }
+    .org-banners-title {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+    .org-banners-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .org-banner-link {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 28px 32px;
+      background: var(--white);
+      border: 2px solid rgba(58,36,16,0.08);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .org-banner-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(200,132,60,0.18);
+    }
+    .org-banner-logo {
+      height: 64px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .org-banner-info { flex: 1; min-width: 0; }
+    .org-banner-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .org-banner-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .org-banner-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================ HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="./images/logo-dark.jpg" alt="株式会社タツミ屋根企画" style="height: 44px; width: auto; display: block;">
+      </div>
+      <div class="header-contact">
+        <div class="header-area">東京都・神奈川県エリア対応　屋根工事・屋根リフォーム</div>
+        <div class="header-tel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="var(--accent)" aria-hidden="true">
+            <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
+          </svg>
+          <span>042-711-7210</span>
+          <span class="header-tel-note">受付 9:00〜17:00</span>
+          <a href="#contact" class="header-cta-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================ ページ内ナビ -->
+  <nav class="page-nav" aria-label="ページ内ナビゲーション">
+    <div class="page-nav-inner">
+      <a href="#services" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,208H224V136l4.41,4.41a8,8,0,0,0,11.32-11.32l-106-106a8,8,0,0,0-11.32,0l-106,106a8,8,0,0,0,11.32,11.32L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,136.69,128,56.69l80,80V208H168V168a8,8,0,0,0-8-8H96a8,8,0,0,0-8,8v40H48ZM152,208H104V176h48Z"/></svg>
+        サービス一覧
+      </a>
+      <a href="#about" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56V96c0,91.36,71.88,153.08,90.29,168.08a15.86,15.86,0,0,0,11.42,3.84,16,16,0,0,0,7-2.27C159.41,249.84,224,194.46,224,96V56A16,16,0,0,0,208,40Zm0,56c0,86.4-56.82,135.62-72.61,148.32L128,249.2l-7.39-5.17C104.82,231.62,48,182.4,48,96V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
+        会社実績
+      </a>
+      <a href="#area" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/></svg>
+        営業エリア
+      </a>
+      <!-- 新着情報ボタン（セクション復活時にコメントを外す）
+      <a href="#news" class="pnav-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"/></svg>
+        新着情報
+      </a>
+      -->
+      <div class="pnav-orgs-group">
+        <span class="pnav-orgs-heading">所属団体</span>
+        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener noreferrer" class="pnav-btn--org">
+          <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="pnav-org-logo">
+          <span class="pnav-org-text">
+            <span class="pnav-org-corp">一般社団法人</span>
+            <span class="pnav-org-fullname">全日本瓦工事業連盟</span>
+          </span>
+        </a>
+        <a href="https://yanekana.jp/" target="_blank" rel="noopener noreferrer" class="pnav-btn--org">
+          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="pnav-org-logo">
+          <span class="pnav-org-text">
+            <span class="pnav-org-corp">神奈川県</span>
+            <span class="pnav-org-fullname">瓦屋根工業連合会</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- スマホ専用 所属団体バー -->
+  <div class="mobile-orgs-bar">
+    <span class="mobile-orgs-label">所属団体</span>
+    <a href="https://www.yane.or.jp/" target="_blank" rel="noopener noreferrer" class="mobile-org-btn">
+      <img src="./images/logo-zenkawaren.jpg" alt="全日本瓦工事業連盟" class="mobile-org-logo">
+      全日本瓦工事業連盟
+    </a>
+    <a href="https://yanekana.jp/" target="_blank" rel="noopener noreferrer" class="mobile-org-btn">
+      <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="mobile-org-logo">
+      神奈川県瓦屋根工業連合会
+    </a>
+  </div>
+
+
+  <!-- ============================================ HERO -->
+  <section class="hero">
+    <div class="hero-top-line" aria-hidden="true"></div>
+    <div class="hero-dot-deco" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <!-- テキスト -->
+      <div class="hero-text">
+        <div class="hero-label-tag">昭和62年創業　|　建設業許可取得</div>
+        <h1 class="hero-title">
+          屋根で守り続ける<br><span class="accent">40年</span>近い信頼と実績
+        </h1>
+        <p class="hero-sub">
+          東京・神奈川の屋根工事ならタツミ屋根企画へ。<br>
+          屋根調査・リフォーム・太陽光・ドローン診断まで、地域密着の確かな技術でご対応します。
+        </p>
+        <div class="hero-cta-wrap">
+          <a href="tel:0427117210" class="hero-phone-btn">
+            <span class="hero-phone-note">📞 お電話でのお問い合わせ</span>
+            <span class="hero-phone-num">042-711-7210</span>
+            <span class="hero-phone-hours">受付時間　平日 9:00〜17:00</span>
+          </a>
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <span class="hero-trust-num">39<span class="unit">年</span></span>
+              <span class="hero-trust-label">創業からの実績</span>
+            </div>
+            <div class="hero-trust-item">
+              <span class="hero-trust-num">10<span class="unit">市</span></span>
+              <span class="hero-trust-label">対応エリア</span>
+            </div>
+            <div class="hero-trust-item" style="flex-shrink:0;">
+              <span class="hero-trust-num" style="font-size:14px; line-height:1.2; font-weight:900; white-space:nowrap; letter-spacing:-0.02em;">建設業許可取得済み</span>
+            </div>
+          </div>
+          <!-- 所属団体ロゴ＋テキストボタン -->
+          <div class="hero-orgs">
+            <span class="hero-orgs-label">所属団体</span>
+            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener noreferrer" class="hero-org-badge">
+              <img src="./images/logo-zenkawaren.jpg" alt="" class="hero-org-logo">
+              全日本瓦工事業連盟
+            </a>
+            <a href="https://yanekana.jp/" target="_blank" rel="noopener noreferrer" class="hero-org-badge">
+              <img src="./images/logo-yanekana.jpg" alt="" class="hero-org-logo">
+              神奈川県瓦屋根工業連合会
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 写真ビジュアル -->
+      <div class="hero-visual">
+        <img
+          src="./images/hero-roof-black.jpg"
+          alt="タツミ屋根企画の施工例 — 和型ブラック瓦の美しい住宅"
+          class="hero-photo"
+          width="600" height="450"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-center" style="margin-bottom: 56px;">
+        <div class="section-label">SERVICE</div>
+        <h2 class="section-title">主なサービス</h2>
+        <p class="section-sub" style="max-width: 560px; margin: 0 auto 0;">
+          屋根に関するお悩みはなんでもご相談ください。<br>
+          調査・診断から施工・アフターフォローまで一貫して対応いたします。
+        </p>
+      </div>
+
+      <!-- メイン3サービス -->
+      <div class="services-grid">
+        <!-- 屋根調査 -->
+        <div class="service-card">
+          <img
+            src="./images/新築板金屋根工事/IMG_1728.JPG"
+            alt="屋根調査・診断の様子 — 新築板金屋根工事"
+            class="service-photo"
+            width="400" height="300"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">INSPECTION</div>
+            <h3 class="service-title">屋根調査・診断</h3>
+            <p class="service-desc">経験豊富なスタッフが現地を丁寧に点検。雨漏り・劣化・破損箇所を正確に診断し、最適な補修プランをご提案します。</p>
+          </div>
+        </div>
+
+        <!-- 屋根リフォーム -->
+        <div class="service-card">
+          <img
+            src="./images/お寺改修工事/20231228_160813.jpg"
+            alt="屋根リフォームの施工例 — お寺の大規模改修工事"
+            class="service-photo"
+            width="400" height="300"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">REFORM</div>
+            <h3 class="service-title">屋根リフォーム</h3>
+            <p class="service-desc">葺き替え・カバー工法・部分補修など、状態と予算に合わせた工法をご提案。高品質な施工で長期にわたる耐久性と美観を実現します。</p>
+          </div>
+        </div>
+
+        <!-- 屋根瓦販売 -->
+        <div class="service-card">
+          <img
+            src="./images/新築屋根瓦工事/IMG_9882.JPG"
+            alt="高品質な屋根瓦の施工例 — 新築瓦工事"
+            class="service-photo"
+            width="400" height="300"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">ROOFTILE</div>
+            <h3 class="service-title">屋根瓦販売</h3>
+            <p class="service-desc">神奈川県瓦連盟加盟店として、高品質な瓦を豊富にラインアップ。日本瓦・洋瓦・平板瓦など建物のテイストに合わせてご提供します。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 追加サービス -->
+      <div class="services-grid">
+        <!-- 太陽光発電 -->
+        <div class="service-card">
+          <img
+            src="./images/service-solar.jpg"
+            alt="太陽光パネルの取付施工例"
+            class="service-photo"
+            width="400" height="225"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">SOLAR</div>
+            <h3 class="service-title">太陽光発電販売・取付工事・メンテナンス</h3>
+            <p class="service-desc">太陽光パネルの販売から取付工事・定期メンテナンスまで一貫対応。長期的な節電効果と設備の安全を屋根専門店がしっかり守ります。</p>
+          </div>
+        </div>
+
+        <!-- 屋根外装リフォーム -->
+        <div class="service-card">
+          <img
+            src="./images/service-exterior.jpg"
+            alt="外装リフォームの施工例"
+            class="service-photo"
+            width="400" height="225"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">EXTERIOR</div>
+            <h3 class="service-title">屋根外装リフォーム</h3>
+            <p class="service-desc">屋根の葺き替え・カバー工法・外壁塗装を含む外装リフォームに幅広く対応。建物の美観と耐久性を同時に高めます。</p>
+          </div>
+        </div>
+
+        <!-- ドローン診断 -->
+        <div class="service-card">
+          <img
+            src="./images/service-drone.jpg"
+            alt="ドローンによる屋根・外壁診断"
+            class="service-photo"
+            width="400" height="225"
+            loading="lazy"
+          >
+          <div class="service-body">
+            <div class="service-card-label">DRONE</div>
+            <h3 class="service-title">屋根・壁・ドローン診断</h3>
+            <p class="service-desc">ドローンを使った高精度な屋根・外壁診断。足場不要で安全かつ短時間に現状を把握し、最適な修繕プランをご提案します。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- すべらん革命 バナー -->
+      <a href="https://suvelankakumei.jp/group/tokyo-machida/" target="_blank" rel="noopener noreferrer" class="suberan-banner">
+        <div class="suberan-left">
+          <div class="suberan-tag">NEW SERVICE</div>
+          <div class="suberan-title">
+            床のすべり止め材 施工・販売
+            <span class="suberan-brand">「すべらん革命」</span>
+          </div>
+          <p class="suberan-desc">
+            転倒事故を防ぐすべり止め専門サービス。玄関・浴室・廊下・階段など、滑りやすい場所に透明な特殊コーティングを施工。見た目を変えずに安全を守ります。<br>
+            <strong>タツミ屋根企画は東京都町田市エリアの認定施工店です。</strong>
+          </p>
+          <div class="suberan-features">
+            <span class="suberan-feat">透明施工で見た目そのまま</span>
+            <span class="suberan-feat">玄関・浴室・廊下・階段 対応</span>
+            <span class="suberan-feat">高齢者・介護施設にも</span>
+          </div>
+        </div>
+        <div class="suberan-right">
+          <div class="suberan-logo-wrap">
+            <img src="./images/logo-suberan.png" alt="すべらん革命" class="suberan-logo">
+          </div>
+          <span class="suberan-cta-btn">
+            詳しくはこちら
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
+              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/>
+            </svg>
+          </span>
+          <div class="suberan-url">suvelankakumei.jp</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================ 実績・信頼（写真背景） -->
+  <section class="trust-section" id="about">
+    <!-- 背景写真 -->
+    <img
+      src="./images/DSC01536.JPG"
+      alt="タツミ屋根企画の施工実績 — 新築和風住宅"
+      class="trust-photo-bg"
+      width="1600" height="900"
+      loading="lazy"
+    >
+    <div class="trust-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="trust-inner">
+        <!-- 左：テキスト -->
+        <div>
+          <div class="section-label">ABOUT US</div>
+          <h2 class="section-title">創業39年<br>地域に根ざした<br>屋根工事専門店</h2>
+          <p class="section-sub">昭和62年4月の創業以来、東京・神奈川の屋根を守り続けてきました。建設業許可を取得し、複数の業界団体に所属する信頼ある施工店です。</p>
+          <div class="trust-features">
+            <div class="trust-feature">
+              <div class="trust-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                  <path d="M208,40H48A16,16,0,0,0,32,56V96c0,91.36,71.88,153.08,90.29,168.08a15.86,15.86,0,0,0,11.42,3.84,16,16,0,0,0,7-2.27C159.41,249.84,224,194.46,224,96V56A16,16,0,0,0,208,40Zm0,56c0,86.4-56.82,135.62-72.61,148.32L128,249.2l-7.39-5.17C104.82,231.62,48,182.4,48,96V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-feature-title">資格</div>
+                <div class="trust-feature-desc">
+                  一級かわらぶき技能士<br>
+                  2級かわらぶき技能士<br>
+                  瓦屋根標準設計・施工ガイドライン適合施工店<br>
+                  瓦屋根診断技士
+                </div>
+              </div>
+            </div>
+            <div class="trust-feature">
+              <div class="trust-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                  <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.43a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.51A8,8,0,0,1,250.14,206.7Z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-feature-title">業界団体 加盟</div>
+                <div class="trust-feature-desc">町田商工会議所・神奈川県瓦連盟</div>
+              </div>
+            </div>
+            <div class="trust-feature">
+              <div class="trust-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                  <path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-feature-title">東京・神奈川 地域密着</div>
+                <div class="trust-feature-desc">町田市を拠点に東京・神奈川の10市をカバー。迅速対応が可能です。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右：数字 -->
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <div class="trust-stat-num">39<span class="unit">年</span></div>
+            <div class="trust-stat-label">創業からの実績<br>昭和62年（1987年）〜</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat-num">10<span class="unit">市</span></div>
+            <div class="trust-stat-label">営業エリア<br>東京・神奈川</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat-num">2<span class="unit">団体</span></div>
+            <div class="trust-stat-label">業界団体加盟<br>確かな品質保証</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat-num" style="font-size:clamp(20px,2vw,28px); line-height:1.5;">建設業<br>許可</div>
+            <div class="trust-stat-label">取得済み<br>信頼ある施工店</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ 営業エリア -->
+  <section class="area-section" id="area">
+    <div class="area-dot" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-center" style="margin-bottom: 56px; position: relative; z-index: 1;">
+        <div class="section-label">SERVICE AREA</div>
+        <h2 class="section-title">営業エリア</h2>
+        <p class="section-sub" style="max-width: 520px; margin: 0 auto 0;">
+          東京都と神奈川県の広範囲に対応。地域密着型サービスで迅速にお伺いします。
+        </p>
+      </div>
+      <div class="area-grid">
+        <div class="area-card">
+          <div class="area-card-header">
+            <div class="area-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/>
+              </svg>
+            </div>
+            <div class="area-pref">東京都</div>
+          </div>
+          <div class="area-cities">
+            <span class="area-city">町田市</span>
+            <span class="area-city">多摩市</span>
+            <span class="area-city">八王子市</span>
+            <span class="area-city">立川市</span>
+            <span class="area-city">日野市</span>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <div class="area-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/>
+              </svg>
+            </div>
+            <div class="area-pref">神奈川県</div>
+          </div>
+          <div class="area-cities">
+            <span class="area-city">相模原市</span>
+            <span class="area-city">厚木市</span>
+            <span class="area-city">海老名市</span>
+            <span class="area-city">綾瀬市</span>
+            <span class="area-city">川崎市</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ 新着情報（一時非表示）
+       実際のお知らせができたらコメントを外して使用してください。
+       日付・バッジ（お知らせ/キャンペーン/サービス）・本文を書き換えるだけでOKです。
+  <section class="news-section" id="news">
+    <div class="container">
+      <div class="section-center" style="margin-bottom: 52px;">
+        <div class="section-label">NEWS</div>
+        <h2 class="section-title">新着情報</h2>
+      </div>
+      <div class="news-list" style="max-width: 780px; margin: 0 auto;">
+        <div class="news-item">
+          <span class="news-date">2025.04.01</span>
+          <span class="news-badge">お知らせ</span>
+          <span class="news-text">ウェブサイトをリニューアルオープンしました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.04.01</span>
+          <span class="news-badge green">キャンペーン</span>
+          <span class="news-text">春の屋根無料点検キャンペーンを開催中です。お気軽にお問い合わせください。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.04.01</span>
+          <span class="news-badge">サービス</span>
+          <span class="news-text">太陽光発電販売・取付工事・メンテナンスサービスを開始しました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.04.01</span>
+          <span class="news-badge">サービス</span>
+          <span class="news-text">ドローンによる屋根・外壁診断サービスを開始しました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.04.01</span>
+          <span class="news-badge">サービス</span>
+          <span class="news-text">床のすべり止め材施工販売「すべらん革命」の取り扱いを開始しました。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  ============================================ -->
+
+
+  <!-- ============================================ 最終CTA（写真背景） -->
+  <section class="cta-section" id="contact">
+    <img
+      src="./images/お寺改修工事/20231228_160943.jpg"
+      alt="夕暮れに輝くお寺の屋根改修工事"
+      class="cta-photo-bg"
+      width="1600" height="800"
+      loading="lazy"
+    >
+    <div class="cta-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label" style="justify-content: center;">CONTACT</div>
+        <h2 class="cta-title">屋根のことなら<br>なんでもご相談ください</h2>
+        <p class="cta-sub">点検・診断・修理・リフォームまで、まずはお電話でお気軽に。</p>
+        <a href="tel:0427117210" class="cta-phone-box">
+          <span class="cta-phone-label">📞 お電話でのお問い合わせ</span>
+          <span class="cta-phone-num">042-711-7210</span>
+          <span class="cta-phone-hours">受付時間　平日 9:00〜17:00</span>
+        </a>
+        <div class="cta-info">
+          <div class="cta-info-item">
+            <svg class="cta-info-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+              <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+            </svg>
+            東京都・神奈川県 広範囲対応
+          </div>
+          <div class="cta-info-item">
+            <svg class="cta-info-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+              <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+            </svg>
+            昭和62年創業・建設業許可取得
+          </div>
+          <div class="cta-info-item">
+            <svg class="cta-info-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+              <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+            </svg>
+            FAX：042-711-7211
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ============================================ 所属団体リンクバナー -->
+  <section class="org-banners-section">
+    <div class="container">
+      <div class="org-banners-title">MEMBER ORGANIZATION</div>
+      <div class="org-banners-grid">
+        <!-- 全日本瓦工事業連盟 -->
+        <a href="https://www.yane.or.jp/" target="_blank" rel="noopener noreferrer" class="org-banner-link">
+          <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">一般社団法人<br>全日本瓦工事業連盟</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              www.yane.or.jp
+            </div>
+          </div>
+        </a>
+        <!-- 神奈川県瓦屋根工業連合会 -->
+        <a href="https://yanekana.jp/" target="_blank" rel="noopener noreferrer" class="org-banner-link">
+          <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="org-banner-logo">
+          <div class="org-banner-info">
+            <div class="org-banner-label">所属団体</div>
+            <div class="org-banner-name">神奈川県<br>瓦屋根工業連合会</div>
+            <div class="org-banner-url">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm57.63,109.66-80,72A8,8,0,0,1,92,198.48V57.52a8,8,0,0,1,13.63-5.18l80,72a8,8,0,0,1,0,11.32Z"/></svg>
+              yanekana.jp
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="./images/logo-white.jpg" alt="株式会社タツミ屋根企画" style="height: 40px; width: auto; display: block;">
+          </div>
+          <p class="footer-tagline">
+            東京・神奈川の屋根工事専門店。<br>
+            昭和62年創業、地域密着39年の信頼と実績。<br>
+            代表者：若林 政次
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">会社情報</div>
+          <div class="footer-list">
+            <div class="footer-list-item">
+              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M128,16a64.07,64.07,0,0,0-64,64c0,52.65,57.23,138.2,59.69,141.81a8,8,0,0,0,8.62,0C134.77,218.2,192,132.65,192,80A64.07,64.07,0,0,0,128,16Zm0,88a24,24,0,1,1,24-24A24,24,0,0,1,128,104Z"/>
+              </svg>
+              〒195-0064<br>東京都町田市小野路町2170-2
+            </div>
+            <div class="footer-list-item">
+              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
+              </svg>
+              TEL：042-711-7210<br>FAX：042-711-7211
+            </div>
+            <div class="footer-list-item">
+              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM80,128a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,128Zm0,32a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,160ZM80,96a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H88A8,8,0,0,1,80,96Z"/>
+              </svg>
+              設立：昭和62年4月8日
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">所属団体</div>
+          <div class="footer-list">
+            <a href="https://www.yane.or.jp/" target="_blank" rel="noopener noreferrer" class="footer-org-link">
+              <div class="footer-org-logo-wrap">
+                <img src="./images/logo-zenkawaren.jpg" alt="一般社団法人 全日本瓦工事業連盟" class="footer-org-logo">
+              </div>
+              <span class="footer-org-name">一般社団法人<br>全日本瓦工事業連盟</span>
+            </a>
+            <a href="https://yanekana.jp/" target="_blank" rel="noopener noreferrer" class="footer-org-link">
+              <div class="footer-org-logo-wrap">
+                <img src="./images/logo-yanekana.jpg" alt="神奈川県瓦屋根工業連合会" class="footer-org-logo">
+              </div>
+              <span class="footer-org-name">神奈川県<br>瓦屋根工業連合会</span>
+            </a>
+            <div class="footer-list-item" style="margin-top:4px;">
+              <svg class="footer-list-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/>
+              </svg>町田商工会議所
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">Copyright © 株式会社タツミ屋根企画. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
